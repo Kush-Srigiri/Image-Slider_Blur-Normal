@@ -3,7 +3,7 @@
 ### 
 
 <br>
-<h1 align="center"> ✨ Image Slider ✨</h1>
+<h1 align="center"> ✨ Image Blurrer ✨</h1>
 <br>
 <br>
 
@@ -44,7 +44,7 @@
 git clone https://github.com/Kush-Srigiri/Image-Slider_Blur-Normal.git
 
 # 2. Navigate into the project
-cd Image-Slider_Blur-Normal
+cd ImageBlurrer
 
 # 3. Install dependencies
 npm install
