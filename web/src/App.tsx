@@ -17,6 +17,16 @@ function App() {
     setDividerX(Math.min(100, Math.max(0, x)));
   };
 
+  const downloadImage = () => {
+    if (!image) return;
+    const link = document.createElement("a");
+    link.href = image;
+    link.download = "blurred-image.png";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
   return (
     <div className="w-full h-screen bg-gradient-to-b from-blue-600 to-purple-800 flex items-center justify-center">
       {!image ? (
@@ -28,9 +38,10 @@ function App() {
         </label>
       ) : (
         <div
-          className="relative w-[500px] h-[300px] overflow-hidden rounded-xl cursor-ew-resize"
+          className="relative w-[800px] h-[500px] overflow-hidden rounded-xl cursor-ew-resize"
           onMouseMove={handleDrag}
         >
+
           {/* Base Image */}
           <img
             src={image}
@@ -46,6 +57,13 @@ function App() {
               className="w-full h-full object-cover opacity-0"
             />
           </div>
+          {/* Download Button */}
+          <button
+            onClick={downloadImage}
+            className="absolute bottom-4 right-4 bg-white/30 text-white px-4 py-2 rounded-full text-sm font-semibold backdrop-blur hover:bg-white/50 transition"
+          >
+            Download Image
+          </button> 
 
           {/* Slider handle */}
           <div className="absolute top-1/2" style={{ left: `${dividerX}%`, transform: "translate(-50%, -50%)" }}>
