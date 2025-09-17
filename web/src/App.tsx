@@ -30,7 +30,7 @@ function App() {
         <label className="w-96 h-64 border-2 border-dashed border-white rounded-xl flex flex-col items-center justify-center text-white cursor-pointer gap-2 transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:bg-white/10">
           <input type="file" accept="image/*" className="hidden" onChange={handleUpload} />
           <img src="/add.svg" alt="Add" className="w-16 h-16" />
-          Add an Image
+          Upload Image
         </label>
       ) : (
         <div
