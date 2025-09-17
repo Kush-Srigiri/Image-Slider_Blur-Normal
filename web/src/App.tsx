@@ -13,6 +13,12 @@ function App() {
     }
   };
 
+  const backbutton = () => {
+    setImage(null);
+    setDivider(50);
+    setDirection("lr");
+  };
+
   const handleMouseDown = () => setDragging(true);
   const handleMouseUp = () => setDragging(false);
 
@@ -148,6 +154,16 @@ function App() {
 
       {/* Download + Buttons */}
       <div className="absolute bottom-8 right-8">{downloadbutton()}</div>
+
+      {/* Back Button */}
+      {image && (
+        <button
+          onClick={backbutton}
+          className="fixed bottom-13 left-1/2 -translate-x-1/2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-2xl text-lg shadow-xl z-[1000] transition-transform duration-200"
+        >
+          Back
+        </button>
+      )}
     </div>
   );
 }
